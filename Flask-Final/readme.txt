@@ -14,6 +14,32 @@ This project aims to analyze credit card transactions in various cities of India
 3. Run the `insert_data()` function in `database.py` to insert data from the CSV file into the database.
 4. Run the Flask application using `python app.py` and navigate to `http://localhost:5000` in your web browser to access the web interface.
 
+The relative path of the CSV file in website.py and database.py files in the project folder, you need to update the file paths to correctly point to the CSV file. Here's how you can do it:
+
+Open website.py and database.py files in your project folder.
+Locate the lines where the CSV file path is specified.
+Update the file path to reflect the correct relative path to your CSV file. For example, if your CSV file is located in a folder named data within your project folder, you would update the path to something like 'data/your_csv_file.csv'.
+
+For website.py:
+# Specify the path to your CSV file
+csv_file_path = 'data/your_csv_file.csv'
+
+# Use the updated path to read the CSV file
+df = pd.read_csv(csv_file_path)
+
+For database.py:
+# Specify the path to your CSV file
+csv_file_path = 'data/your_csv_file.csv'
+
+# Use the updated path to insert data into the database
+def insert_data_into_database():
+    # Read CSV file
+    df = pd.read_csv(csv_file_path)
+    # Insert data into database
+    ...
+
+
+
 ### Packages Used
 - **pandas**: Used for data manipulation and analysis.
 - **sqlite3**: Used for interacting with SQLite databases.
