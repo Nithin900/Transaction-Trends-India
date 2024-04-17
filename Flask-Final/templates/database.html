@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        a.home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        a.home-button:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>Dataset Display</title>
+</head>
+<body>
+    <a href="/" class="home-button">Home</a>
+    <h1>Dataset Display</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>city</th>
+                <th>date</th>
+                <th>card_type</th>
+                <th>exp_type</th>
+                <th>gender</th>
+                <th>amount</th>  
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for data in dataset %}
+            <tr>
+                <td>{{ data['id'] }}</td>
+                <td>{{ data['city']}}</td>
+                <td>{{ data['date']}}</td>
+                <td>{{ data['card_type'] }}</td>
+                <td>{{ data['exp_type'] }}</td>
+                <td>{{ data['gender'] }}</td>
+                <td>{{ data['amount'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
